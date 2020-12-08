@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 
 class ToDoItem extends Component {
     toggleStatus = () => {
-        const status= !this.props.done
-        this.setState({done: status});
+        this.props.updateStatus(this.props.id, this.props.done);
     }
     render() {
         return (
             <div>
                 <input style={{
                     textDecoration: this.props.done ? 'line-through' : 'none',
-                }} type="button" onClick={this.toggleStatus} />
+                }} type="button" value={this.props.text} id={this.props.id} onClick={this.toggleStatus} />
             </div>
         );
     }
