@@ -40,8 +40,33 @@
   background-color: white;
   border: none;
   color: black;
-  padding: 0px 800px 0px 0px;
+  padding: 0px 900px 0px 0px;
+  width:90%;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: -2px;
   cursor: pointer;
 }
+.deleteButton{
+  font-size: 20px;
+  margin:  -20px;
+  color: red;
+  background:none;
+  border:none;
+}
+h1{
+  text-align: center;
+  margin: 0px;
+  padding: 0px
+
+}
+.TodoList{
+  height: 100vh;
+}
+.TodoGroup{
+  position: absolute;
+  width: 1000px;
+  z-index: 15;
+  top: 30%;
+  left: 17%;
+}
+

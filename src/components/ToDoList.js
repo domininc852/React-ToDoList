@@ -4,9 +4,13 @@ import ToDoGroupContainer from '../containers/ToDoGroupContainer'
 class ToDoList extends Component {
     render() {
         return (
-            <div>
-                <ToDoGroupContainer />
-                <ToDoGeneratorContainer />
+            <div className="TodoList">
+                <h1>Todo List</h1>
+                <div className="TodoGroup">
+                    <ToDoGroupContainer />
+                    <ToDoGeneratorContainer />
+                </div>
+
             </div>
         );
     }

@@ -4,18 +4,21 @@ import { v4 as uuidv4 } from 'uuid'
 class ToDoGenerator extends Component {
     constructor(props) {
         super(props);
+        this.state={text:""}
 
     }
 
-    addToDoItem = (event) => {
-        let toDoItem = { id: uuidv4(), text: document.getElementById("text").value, done: false }
+    addToDoItem = () => {
+        let toDoItem = { id: uuidv4(), text:this.state.text, done: false }
         this.props.addToDo(toDoItem);
     }
-
+    changeText = (event)=>{
+        this.setState({text:event.target.value});
+    }
     render() {
         return (
             <div>
-                <input id="text" type="text" placeholder="Input some text here" />
+                <input id="text" type="text" placeholder="Input some text here" onChange={this.changeText}/>
                 <input type="button" value="add" onClick={this.addToDoItem} />
             </div>
         );
