@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
 import ToDoItem from '../components/ToDoItem';
-import { updateItemStatus } from '../actions'
+import { updateItemStatus, deleteItem } from '../actions'
 
 const mapDispatchToProps = dispatch => ({
-    updateStatus: (id, status) => dispatch(updateItemStatus(id, status))
+    updateStatus: (id, status) => dispatch(updateItemStatus(id, status)),
+    deleteItem: (id) => dispatch(deleteItem(id))
 })
 
 const ToDoItemContainer = connect(null, mapDispatchToProps)(ToDoItem);
