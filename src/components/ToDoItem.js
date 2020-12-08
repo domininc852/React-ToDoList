@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class ToDoItem extends Component {
     toggleStatus = () => {
-        this.props.updateStatus(this.props.id, this.props.done);
+        this.props.updateStatus(this.props.id);
     }
     deleteItem = () => {
         this.props.deleteItem(this.props.id);

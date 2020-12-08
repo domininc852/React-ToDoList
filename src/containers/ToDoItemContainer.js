@@ -3,7 +3,7 @@ import ToDoItem from '../components/ToDoItem';
 import { updateItemStatus, deleteItem } from '../actions'
 
 const mapDispatchToProps = dispatch => ({
-    updateStatus: (id, status) => dispatch(updateItemStatus(id, status)),
+    updateStatus: (id) => dispatch(updateItemStatus(id)),
     deleteItem: (id) => dispatch(deleteItem(id))
 })
 

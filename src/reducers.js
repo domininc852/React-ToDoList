@@ -6,10 +6,10 @@ const ToDos = (state = [], action) => {
         return [action.payload,...state];
     }
     if (action.type === UPDATE_ITEM_STATUS) {
-        return state.map(todo => todo.id === action.id ? { ...todo, done: !action.status } : todo);
+        return state.map(todo => todo.id === action.payload ? { ...todo, done: !todo.done } : todo);
     }
     if (action.type === DELETE_ITEM) {
-        return state.filter(todo => todo.id !== action.id);
+        return state.filter(todo => todo.id !== action.payload);
     }
     return state;
 
