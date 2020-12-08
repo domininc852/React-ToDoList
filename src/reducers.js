@@ -8,8 +8,8 @@ const ToDos = (state = [], action) => {
     if (action.type === UPDATE_ITEM_STATUS) {
         return state.map(todo => todo.id === action.id ? { ...todo, done: !action.status } : todo);
     }
-    if (action.type ===DELETE_ITEM){
-        return state.filter(todo=>todo.id!=action.id);
+    if (action.type === DELETE_ITEM) {
+        return state.filter(todo => todo.id != action.id);
     }
     return state;
 

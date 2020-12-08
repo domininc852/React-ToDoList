@@ -4,7 +4,7 @@ class ToDoItem extends Component {
     toggleStatus = () => {
         this.props.updateStatus(this.props.id, this.props.done);
     }
-    deleteItem =()=>{
+    deleteItem = () => {
         this.props.deleteItem(this.props.id);
     }
     render() {
@@ -13,7 +13,7 @@ class ToDoItem extends Component {
                 <input style={{
                     textDecoration: this.props.done ? 'line-through' : 'none',
                 }} class="todoItem" type="button" value={this.props.text} id={this.props.id} onClick={this.toggleStatus} />
-                <input type="button" class="deleteButton"value="x" onClick={this.deleteItem}/>
+                <input type="button" class="deleteButton" value="x" onClick={this.deleteItem} />
             </div>
         );
     }
