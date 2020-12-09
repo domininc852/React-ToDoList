@@ -13,7 +13,7 @@ class AddLabel extends Component {
 
     handleOk = () => {
         const { text, color } = this.state;
-        if (text == "") {
+        if (text === "") {
             return;
         }
         const labels = this.props.item.labels;

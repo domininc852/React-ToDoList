@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ToDoItemContainer from '../containers/ToDoItemContainer'
 import { getAllTodoList } from '../apis/todos'
-import { List, Typography, Divider } from 'antd';
+import { List, Divider } from 'antd';
 
 class ToDoGroup extends Component {
 

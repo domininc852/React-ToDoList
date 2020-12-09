@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import ToDoList from './components/ToDoList';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import DoneListContainer from './containers/DoneListContainer'
 import NotFound from './components/NotFound'
 import Navigation from './components/Navigation'
