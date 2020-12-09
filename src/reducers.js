@@ -1,9 +1,13 @@
 import { combineReducers } from 'redux'
-import { ADD_TODO_ITEM, UPDATE_ITEM_STATUS, DELETE_ITEM } from './actionTypes'
+import { ADD_TODO_ITEM, UPDATE_ITEM_STATUS, DELETE_ITEM, INIT_TODO } from './actionTypes'
 
 const ToDos = (state = [], action) => {
+    if (action.type === INIT_TODO) {
+        return action.payload;
+    }
+
     if (action.type === ADD_TODO_ITEM) {
-        return [action.payload,...state];
+        return [action.payload, ...state];
     }
     if (action.type === UPDATE_ITEM_STATUS) {
         return state.map(todo => todo.id === action.payload ? { ...todo, done: !todo.done } : todo);

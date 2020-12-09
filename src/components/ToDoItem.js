@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
+import { deleteTodo, updateTodo } from '../apis/todos';
 
 class ToDoItem extends Component {
     toggleStatus = () => {
-        this.props.updateStatus(this.props.toDoItem.id);
+        updateTodo(this.props.toDoItem).then((response) => {
+            this.props.updateStatus(response.data.id);
+        })
     }
     deleteItem = () => {
-        this.props.deleteItem(this.props.toDoItem.id);
+        deleteTodo(this.props.toDoItem.id).then(() => {
+            this.props.deleteItem(this.props.toDoItem.id);
+        })
+
     }
     render() {
         return (

@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import ToDoItemContainer from '../containers/ToDoItemContainer'
+import {getAllTodoList} from '../apis/todos'
 
 class ToDoGroup extends Component {
+
+    componentDidMount() {
+        getAllTodoList().then((response) => {
+            this.props.initTodo(response.data);
+        })
+    }
 
     render() {
         return (
