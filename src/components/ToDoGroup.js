@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ToDoItemContainer from '../containers/ToDoItemContainer'
-import {getAllTodoList} from '../apis/todos'
+import { getAllTodoList } from '../apis/todos'
+import { List, Typography, Divider } from 'antd';
 
 class ToDoGroup extends Component {
 
@@ -11,10 +12,21 @@ class ToDoGroup extends Component {
     }
 
     render() {
+        const data = this.props.toDoList;
         return (
-            this.props.toDoList.map(toDoItem => {
-                return <ToDoItemContainer toDoItem={toDoItem} key={toDoItem.id}  />
-            })
+
+            <div>
+                <Divider orientation="left">Todo List</Divider>
+                <List
+                    bordered
+                    dataSource={data}
+                    renderItem={toDoItem => (
+                        <List.Item>
+                            <ToDoItemContainer toDoItem={toDoItem} key={toDoItem.id} />
+                        </List.Item>)}
+                />
+            </div>
+
         );
     }
 }

@@ -6,7 +6,7 @@ export const addToDoItem = (toDoItem) => {
     }
 }
 export const updateItemStatus = (id) => {
-    return { type: UPDATE_ITEM_STATUS, payload: id, }
+    return { type: UPDATE_ITEM_STATUS, payload: id }
 }
 export const deleteItem = (id) => {
     return { type: DELETE_ITEM, payload: id }

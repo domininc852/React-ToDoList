@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { deleteTodo, updateTodo } from '../apis/todos';
+import { Button } from 'antd';
 
 class ToDoItem extends Component {
     toggleStatus = () => {
@@ -15,11 +16,12 @@ class ToDoItem extends Component {
     }
     render() {
         return (
-            <div onClick={this.toggleStatus}>
-                <input style={{
-                    textDecoration: this.props.toDoItem.done ? 'line-through' : 'none',
-                }} className="todoItem" type="button" value={this.props.toDoItem.text} onClick={this.toggleStatus} />
-                <input type="button" className="deleteButton" value="x" onClick={this.deleteItem} />
+            <div className="site-button-ghost-wrapper">
+                <Button className="todoItem" onClick={this.toggleStatus} style={{
+                        textDecoration: this.props.toDoItem.done ? 'line-through' : 'none',
+                    }} type="primary" ghost>{this.props.toDoItem.text}
+                </Button>
+                <Button type="primary" ghost onClick={this.deleteItem}>X</Button>
             </div>
         );
     }

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Menu } from 'antd';
+import { Link } from 'react-router-dom'
 
 class Navigation extends Component {
     render() {
         return (
-            <Menu onClick={this.handleClick} selectedKeys={[current]} mode="horizontal">
+            <Menu mode="horizontal">
                 <Menu.Item key="mail">
                     <Link to="/">go to list</Link>
                 </Menu.Item>

@@ -1,5 +1,5 @@
 .App{
-  background-color:green;
+  background-color: white;
 }
 
 .App-logo {
@@ -38,13 +38,14 @@
 }
 .todoItem{
   background-color: white;
-  border: none;
+  border: 1px;
   color: black;
   padding: 0px 900px 0px 0px;
   width:90%;
   font-size: 16px;
   margin: -2px;
   cursor: pointer;
+  text-decoration: line-through;
 }
 .deleteButton{
   font-size: 20px;
