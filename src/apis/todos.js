@@ -14,5 +14,5 @@ export const deleteTodo = (todoItemId) => {
 }
 
 export const updateTodo = (todoItem) => {
-    return api.patch('/todos/' + todoItem.id, { done: !todoItem.done});
+    return api.put('/todos/' + todoItem.id, { ...todoItem, done: !todoItem.done });
 }
