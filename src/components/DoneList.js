@@ -6,14 +6,14 @@ class DoneList extends Component {
     render() {
         const data = this.props.doneList.map(doneItem => doneItem.text);
         return (
-            <div>
+            <div className="DoneList">
                 <Divider orientation="left">Done List</Divider>
                 <List
                     bordered
                     dataSource={data}
                     renderItem={item => (
                         <List.Item>
-                        <Typography.Text mark>[ITEM]</Typography.Text> {item}
+                            {item}
                         </List.Item>
                     )}
                 />

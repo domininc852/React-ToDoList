@@ -38,21 +38,12 @@
 }
 .todoItem{
   background-color: white;
-  border: 1px;
+  border: none;
   color: black;
-  padding: 0px 900px 0px 0px;
-  width:90%;
   font-size: 16px;
-  margin: -2px;
+  padding: 0px 800px 0px 0px;
+  width:200px;
   cursor: pointer;
-  text-decoration: line-through;
-}
-.deleteButton{
-  font-size: 20px;
-  margin:  -20px;
-  color: red;
-  background:none;
-  border:none;
 }
 h1{
   text-align: center;
@@ -63,7 +54,7 @@ h1{
 .TodoList, .DoneList{
   height: 100vh;
 }
-.TodoGroup{
+.TodoGroup, .DoneList{
   position: absolute;
   width: 1000px;
   z-index: 15;
