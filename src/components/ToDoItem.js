@@ -12,8 +12,8 @@ class ToDoItem extends Component {
             <div>
                 <input style={{
                     textDecoration: this.props.toDoItem.done ? 'line-through' : 'none',
-                }} class="todoItem" type="button" value={this.props.toDoItem.text} onClick={this.toggleStatus} />
-                <input type="button" class="deleteButton" value="x" onClick={this.deleteItem} />
+                }} className="todoItem" type="button" value={this.props.toDoItem.text} onClick={this.toggleStatus} />
+                <input type="button" className="deleteButton" value="x" onClick={this.deleteItem} />
             </div>
         );
     }

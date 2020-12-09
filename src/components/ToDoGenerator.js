@@ -7,7 +7,6 @@ class ToDoGenerator extends Component {
         this.state = { text: "" }
 
     }
-
     addToDoItem = () => {
         let toDoItem = { id: uuidv4(), text: this.state.text, done: false }
         this.props.addToDo(toDoItem);
@@ -22,7 +21,7 @@ class ToDoGenerator extends Component {
         return (
             <div>
                 <input type="text" value={this.state.text} placeholder="Input some text here" onChange={this.changeText} />
-                <input type="button" value="add" onClick={this.addToDoItem} />
+                <input type="button" value="add" onClick={this.addToDoItem}/>
             </div>
         );
     }
