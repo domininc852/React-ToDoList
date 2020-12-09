@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
-import { List, Typography, Divider } from 'antd';
+import { List, Divider } from 'antd';
+import LabelGroup from './LabelGroup';
 
 class DoneList extends Component {
 
     render() {
-        const data = this.props.doneList.map(doneItem => doneItem.text);
+        const data = this.props.doneList;
         return (
             <div className="DoneList">
-                <Divider orientation="left">Done List</Divider>
+                <Divider orientation="middle">Done List</Divider>
                 <List
                     bordered
                     dataSource={data}
                     renderItem={item => (
                         <List.Item>
-                            {item}
+                            {item.text}
+                            <LabelGroup toDoItem={item} />
                         </List.Item>
                     )}
                 />

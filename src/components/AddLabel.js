@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Modal, Button } from 'antd';
-
+import { updateLabel } from '../apis/todos'
 class AddLabel extends Component {
     constructor(props) {
         super(props);
@@ -12,14 +12,20 @@ class AddLabel extends Component {
     };
 
     handleOk = () => {
+        const { text, color } = this.state;
+        if (text == "") {
+            return;
+        }
         const labels = this.props.item.labels;
-        const toDoItem={...this.props.item, labels:[...labels,{description:this.state.text, color: this.state.color}]};
-        this.props.addLabel(toDoItem)
-        this.setState({ isModalVisible: false });
+        const toDoItem = { ...this.props.item, labels: [...labels, { description: text, color: color }] };
+        updateLabel(toDoItem).then((response) => {
+            this.props.addLabel(response.data)
+        })
+        this.setState({ isModalVisible: false, text: "" });
     };
 
     handleCancel = () => {
-        this.setState({ isModalVisible: false });
+        this.setState({ isModalVisible: false, text: "" });
     };
     changeText = (event) => {
         this.setState({ text: event.target.value });

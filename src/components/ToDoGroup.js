@@ -16,7 +16,7 @@ class ToDoGroup extends Component {
         return (
 
             <div>
-                <Divider orientation="left">Todo List</Divider>
+                <Divider orientation="middle">Todo List</Divider>
                 <List
                     bordered
                     dataSource={data}

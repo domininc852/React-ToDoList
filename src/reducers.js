@@ -15,10 +15,10 @@ const ToDos = (state = [], action) => {
     if (action.type === DELETE_ITEM) {
         return state.filter(todo => todo.id !== action.payload);
     }
-    if (action.type===ADD_LABEL){
-        return state.map(todo => todo.id === action.payload.id ? { ...todo, labels:action.payload.labels } : todo);
+    if (action.type === ADD_LABEL) {
+        return state.map(todo => todo.id === action.payload.id ? { ...todo, labels: action.payload.labels } : todo);
     }
-        return state;
+    return state;
 
 
 }
