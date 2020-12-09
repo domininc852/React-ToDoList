@@ -18,7 +18,7 @@ class ToDoItem extends Component {
     }
     render() {
 
-        const { id, text, done } = this.props.toDoItem;
+        const { text, done } = this.props.toDoItem;
         return (
             <div >
                 <input style={{

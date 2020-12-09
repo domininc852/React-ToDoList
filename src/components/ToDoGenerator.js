@@ -8,6 +8,9 @@ class ToDoGenerator extends Component {
 
     }
     addToDoItem = () => {
+        if (this.state.text===""){
+            return;
+        }
         let toDoItem = { text: this.state.text, done: false }
         addNewTodo(toDoItem).then((response) => {
             this.props.addToDo(response.data);
