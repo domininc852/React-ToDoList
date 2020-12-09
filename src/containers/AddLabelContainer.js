@@ -1,11 +1,11 @@
 import { connect } from 'react-redux'
-import AddLabel from '../components/AddLabel'
+import AddLabelButton from '../components/AddLabelButton'
 import { addLabel } from '../actions'
 
 const mapDispatchToProps = (dispatch) => ({
     addLabel: (toDoItem) => dispatch(addLabel(toDoItem))
 })
 
-const AddLabelContainer = connect(null, mapDispatchToProps)(AddLabel);
+const AddLabelContainer = connect(null, mapDispatchToProps)(AddLabelButton);
 
 export default AddLabelContainer;
