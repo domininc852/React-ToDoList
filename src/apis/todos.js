@@ -18,5 +18,11 @@ export const updateTodo = (todoItem) => {
 }
 
 export const updateLabel = (todoItem) => {
-    return api.put('/todos/' + todoItem.id, { ...todoItem, labels: todoItem.labels });
+    return api.put('/todos/' + todoItem.id, { ...todoItem });
+}
+
+export const deleteLabel = (todoItem, labelId)=>{
+    const labels = todoItem.labels.filter((label,index)=>index!=labelId);
+    return api.put('/todos/' + todoItem.id, { ...todoItem, labels:labels });
+
 }

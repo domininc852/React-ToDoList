@@ -1,4 +1,4 @@
-import { ADD_TODO_ITEM, UPDATE_ITEM_STATUS, DELETE_ITEM, INIT_TODO, ADD_LABEL } from './actionTypes'
+import { ADD_TODO_ITEM, UPDATE_ITEM_STATUS, DELETE_ITEM, INIT_TODO, ADD_LABEL, DELETE_LABEL } from './actionTypes'
 export const addToDoItem = (toDoItem) => {
     return {
         type: ADD_TODO_ITEM,
@@ -17,4 +17,8 @@ export const initTodo = (todoList) => {
 }
 export const addLabel = (toDoItem) => {
     return { type: ADD_LABEL, payload: toDoItem }
+}
+
+export const deleteLabel = (toDoItem) => {
+    return { type: DELETE_LABEL, payload: toDoItem }
 }

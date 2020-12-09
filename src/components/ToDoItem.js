@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { deleteTodo, updateTodo } from '../apis/todos';
 import DeleButton from './DeleteButton';
 import AddLabelContainer from '../containers/AddLabelContainer'
-import LabelGroup from './LabelGroup';
+import LabelGroupContainer from '../containers/LabelGroupContainer';
 
 class ToDoItem extends Component {
     toggleStatus = () => {
@@ -10,7 +10,7 @@ class ToDoItem extends Component {
             this.props.updateStatus(response.data.id);
         })
     }
-    deleteItem = (event) => {
+    deleteItem = () => {
         deleteTodo(this.props.toDoItem.id).then(() => {
             this.props.deleteItem(this.props.toDoItem.id);
         })
@@ -20,15 +20,13 @@ class ToDoItem extends Component {
 
         const { id, text, done } = this.props.toDoItem;
         return (
-            <div>
+            <div >
                 <input style={{
                     textDecoration: done ? 'line-through' : 'none'
                 }} type="button" className="todoItem" value={text} onClick={this.toggleStatus} />
                 <DeleButton onClick={this.deleteItem} />
-                <LabelGroup toDoItem={this.props.toDoItem} />
+                <LabelGroupContainer toDoItem={this.props.toDoItem} />
                 <AddLabelContainer item={this.props.toDoItem} />
-
-
             </div >
         );
     }
