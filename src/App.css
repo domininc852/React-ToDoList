@@ -1,5 +1,5 @@
-.App {
-  text-align: center;
+.App{
+  background-color:green;
 }
 
 .App-logo {
@@ -59,7 +59,7 @@ h1{
   padding: 0px
 
 }
-.TodoList{
+.TodoList, .DoneList{
   height: 100vh;
 }
 .TodoGroup{
@@ -69,5 +69,3 @@ h1{
   top: 30%;
   left: 17%;
 }
-
-
