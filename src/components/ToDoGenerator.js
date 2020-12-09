@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { addNewTodo } from '../apis/todos';
-
+import { Button } from 'antd';
 class ToDoGenerator extends Component {
     constructor(props) {
         super(props);
@@ -28,7 +28,7 @@ class ToDoGenerator extends Component {
         return (
             <div>
                 <input type="text" value={this.state.text} placeholder="Input some text here" onChange={this.changeText} onKeyDown={this.handleKeyDown} />
-                <input type="button" value="add" onClick={this.addToDoItem} />
+                <Button type="primary"onClick={this.addToDoItem}>add</Button>
             </div>
         );
     }

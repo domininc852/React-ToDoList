@@ -4,6 +4,7 @@ import ToDoList from './components/ToDoList';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom'
 import DoneListContainer from './containers/DoneListContainer'
 import NotFound from './components/NotFound'
+import Navigation from './components/Navigation'
 
 function App() {
   return (
@@ -12,10 +13,7 @@ function App() {
         <h1>Hello React</h1>
       </header>
       <BrowserRouter>
-        <ul style={{textAlign: "left"}}>
-          <li><Link to="/">go to list</Link></li>
-          <li><Link to="/done">go to done list</Link></li>
-        </ul>
+        <Navigation />
         <Switch>
           <Route exact path="/done" component={DoneListContainer}></Route>
           <Route exact path="/" component={ToDoList}></Route>

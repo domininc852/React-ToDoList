@@ -15,7 +15,7 @@ class ToDoItem extends Component {
     }
     render() {
         return (
-            <div>
+            <div onClick={this.toggleStatus}>
                 <input style={{
                     textDecoration: this.props.toDoItem.done ? 'line-through' : 'none',
                 }} className="todoItem" type="button" value={this.props.toDoItem.text} onClick={this.toggleStatus} />
