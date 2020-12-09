@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 
 class ToDoItem extends Component {
     toggleStatus = () => {
-        this.props.updateStatus(this.props.id);
+        this.props.updateStatus(this.props.toDoItem.id);
     }
     deleteItem = () => {
-        this.props.deleteItem(this.props.id);
+        this.props.deleteItem(this.props.toDoItem.id);
     }
     render() {
         return (
             <div>
                 <input style={{
-                    textDecoration: this.props.done ? 'line-through' : 'none',
-                }} class="todoItem" type="button" value={this.props.text} id={this.props.id} onClick={this.toggleStatus} />
+                    textDecoration: this.props.toDoItem.done ? 'line-through' : 'none',
+                }} class="todoItem" type="button" value={this.props.toDoItem.text} onClick={this.toggleStatus} />
                 <input type="button" class="deleteButton" value="x" onClick={this.deleteItem} />
             </div>
         );

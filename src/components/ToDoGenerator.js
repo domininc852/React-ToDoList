@@ -11,6 +11,9 @@ class ToDoGenerator extends Component {
     addToDoItem = () => {
         let toDoItem = { id: uuidv4(), text: this.state.text, done: false }
         this.props.addToDo(toDoItem);
+        this.setState({
+            text: ""
+        })
     }
     changeText = (event) => {
         this.setState({ text: event.target.value });
@@ -18,7 +21,7 @@ class ToDoGenerator extends Component {
     render() {
         return (
             <div>
-                <input id="text" type="text" placeholder="Input some text here" onChange={this.changeText} />
+                <input type="text" value={this.state.text} placeholder="Input some text here" onChange={this.changeText} />
                 <input type="button" value="add" onClick={this.addToDoItem} />
             </div>
         );
