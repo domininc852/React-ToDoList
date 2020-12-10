@@ -7,7 +7,7 @@ class DeleButton extends Component {
     render() {
         const text = "Are you sure to delete the ToDo item?"
         return (
-            <div style={{ marginTop: "-32px", marginLeft: "900px" }}>
+            <div className="deleteButton">
                 <Popconfirm placement="topLeft" title={text} onConfirm={this.confirm} okText="Yes" cancelText="No">
                     <Button>X</Button>
                 </Popconfirm>

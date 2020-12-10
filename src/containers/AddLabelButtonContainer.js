@@ -6,6 +6,6 @@ const mapDispatchToProps = (dispatch) => ({
     addLabel: (toDoItem) => dispatch(updateItem(toDoItem))
 })
 
-const AddLabelContainer = connect(null, mapDispatchToProps)(AddLabelButton);
+const AddLabelButtonContainer = connect(null, mapDispatchToProps)(AddLabelButton);
 
-export default AddLabelContainer;
+export default AddLabelButtonContainer;

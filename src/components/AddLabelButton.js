@@ -35,7 +35,7 @@ class AddLabel extends Component {
     }
     render() {
         return (
-            <div style={{ marginTop: "10px" }}>
+            <div className="AddLabelButton">
                 <Button type="primary" onClick={this.showModal}>
                     Add label
             </Button>

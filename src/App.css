@@ -41,7 +41,7 @@
   border: none;
   color: black;
   font-size: 16px;
-  padding: 0px 500px 0px 0px;
+  padding: 0px 800px 0px 0px;
   width:200px;
   cursor: pointer;
 }
@@ -61,10 +61,18 @@ h1{
   top: 30%;
   left: 17%;
 }
+
+ .ItemLabel, .label, .deleteButton, .AddLabelButton{
+  display: inline-block;
+
+}
 .label{
   margin: 10px;
-  display: inline-block;
 }
+
+
 .LabelGroup{
-  display: inline-block;
+  width:800px;
 }
+
+

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { deleteTodo, updateTodo } from '../apis/todos';
 import DeleButton from './DeleteButton';
-import AddLabelContainer from '../containers/AddLabelContainer'
+import AddLabelButtonContainer from '../containers/AddLabelButtonContainer'
 import LabelGroupContainer from '../containers/LabelGroupContainer';
 
 class ToDoItem extends Component {
     toggleStatus = () => {
-        updateTodo(this.props.toDoItem).then((response) => {
-            this.props.updateStatus(response.data.id);
+        const toDoItem = { ...this.props.toDoItem, done: !this.props.toDoItem.done }
+        updateTodo(toDoItem).then((response) => {
+            this.props.updateStatus(response.data);
         })
     }
     deleteItem = () => {
@@ -20,17 +21,17 @@ class ToDoItem extends Component {
 
         const { text, done } = this.props.toDoItem;
         return (
-            <div >
-                <div>
+            <div>
+                <div className="ItemLabel">
                     <input style={{
                         textDecoration: done ? 'line-through' : 'none'
                     }} type="button" className="todoItem" value={text} onClick={this.toggleStatus} />
-                    <LabelGroupContainer toDoItem={this.props.toDoItem} />
+                    <AddLabelButtonContainer item={this.props.toDoItem} />
+                    <DeleButton onClick={this.deleteItem} />
                 </div>
-                <DeleButton onClick={this.deleteItem} />
 
-                <AddLabelContainer item={this.props.toDoItem} />
-            </div >
+                <LabelGroupContainer toDoItem={this.props.toDoItem} />
+            </div>
         );
     }
 }
