@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { List, Divider } from 'antd';
-import LabelGroup from './LabelGroup';
+import LabelGroupContainer from '../containers/LabelGroupContainer';
 
 class DoneList extends Component {
 
@@ -15,7 +15,7 @@ class DoneList extends Component {
                     renderItem={item => (
                         <List.Item>
                             {item.text}
-                            <LabelGroup toDoItem={item} />
+                            <LabelGroupContainer toDoItem={item} />
                         </List.Item>
                     )}
                 />
