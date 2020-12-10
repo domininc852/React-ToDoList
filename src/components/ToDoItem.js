@@ -21,11 +21,14 @@ class ToDoItem extends Component {
         const { text, done } = this.props.toDoItem;
         return (
             <div >
-                <input style={{
-                    textDecoration: done ? 'line-through' : 'none'
-                }} type="button" className="todoItem" value={text} onClick={this.toggleStatus} />
+                <div>
+                    <input style={{
+                        textDecoration: done ? 'line-through' : 'none'
+                    }} type="button" className="todoItem" value={text} onClick={this.toggleStatus} />
+                    <LabelGroupContainer toDoItem={this.props.toDoItem} />
+                </div>
                 <DeleButton onClick={this.deleteItem} />
-                <LabelGroupContainer toDoItem={this.props.toDoItem} />
+
                 <AddLabelContainer item={this.props.toDoItem} />
             </div >
         );

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Modal, Button } from 'antd';
-import { updateLabel } from '../apis/todos'
+import { updateTodo } from '../apis/todos'
 class AddLabel extends Component {
     constructor(props) {
         super(props);
@@ -18,7 +18,7 @@ class AddLabel extends Component {
         }
         const labels = this.props.item.labels;
         const toDoItem = { ...this.props.item, labels: [...labels, { description: text, color: color }] };
-        updateLabel(toDoItem).then((response) => {
+        updateTodo(toDoItem).then((response) => {
             this.props.addLabel(response.data)
         })
         this.setState({ isModalVisible: false, text: "" });

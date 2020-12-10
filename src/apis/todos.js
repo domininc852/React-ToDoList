@@ -14,15 +14,6 @@ export const deleteTodo = (todoItemId) => {
 }
 
 export const updateTodo = (todoItem) => {
-    return api.put('/todos/' + todoItem.id, { ...todoItem, done: !todoItem.done });
+    return api.put('/todos/' + todoItem.id, { ...todoItem});
 }
 
-export const updateLabel = (todoItem) => {
-    return api.put('/todos/' + todoItem.id, { ...todoItem });
-}
-
-export const deleteLabel = (todoItem, labelId)=>{
-    const labels = todoItem.labels.filter((label,index)=>index!=labelId);
-    return api.put('/todos/' + todoItem.id, { ...todoItem, labels:labels });
-
-}
