@@ -13,14 +13,14 @@ class LabelManagement extends Component {
         const data = this.props.labels;
         return (
             <div>
-                <AddLabelButtonContainer />
+                <AddLabelButtonContainer labels={this.props.labels} />
                 <Divider orientation="middle">Label</Divider>
                 <List
                     bordered
                     dataSource={data}
                     renderItem={label => (
                         <List.Item>
-                            <LabelItemContainer label={label} key={label.id} />
+                            <LabelItemContainer labels={data} label={label} key={label.id} />
                         </List.Item>)}
                 />
             </div>
