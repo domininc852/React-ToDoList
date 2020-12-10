@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { List, Divider } from 'antd';
 import LabelGroupContainer from '../containers/LabelGroupContainer';
+import { getAllTodoList } from '../apis/todos'
 
 class DoneList extends Component {
-
+    componentDidMount() {
+        getAllTodoList().then((response) => {
+            this.props.initTodo(response.data);
+        });   
+    }
     render() {
         const data = this.props.doneList;
         return (

@@ -74,5 +74,16 @@ h1{
 .LabelGroup{
   width:800px;
 }
-
+.LabelItem{
+  width:100%;
+  text-align: center;
+}
+.LabelDescription{
+  cursor: pointer;
+  padding :5px
+}
+.LabelDeleteButton{
+  display: flex;
+  float: right;
+}
 

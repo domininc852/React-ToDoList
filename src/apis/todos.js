@@ -14,6 +14,9 @@ export const deleteTodo = (todoItemId) => {
 }
 
 export const updateTodo = (todoItem) => {
-    return api.put('/todos/' + todoItem.id, { ...todoItem});
+    const labels = todoItem.labels.map(label => label.id);
+    const todoItemWithoutID = { text: todoItem.text, done: todoItem.done, labels: labels }
+    return api.put('/todos/' + todoItem.id, todoItemWithoutID);
 }
+
 

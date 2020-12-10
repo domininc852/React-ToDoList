@@ -12,6 +12,9 @@ class Navigation extends Component {
                 <Menu.Item key="app" >
                     <Link to="/done">go to done list</Link>
                 </Menu.Item>
+                <Menu.Item key="app" >
+                    <Link to="/labels">Manage Label</Link>
+                </Menu.Item>
             </Menu>
         );
     }

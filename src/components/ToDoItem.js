@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { deleteTodo, updateTodo } from '../apis/todos';
 import DeleButton from './DeleteButton';
-import AddLabelButtonContainer from '../containers/AddLabelButtonContainer'
 import LabelGroupContainer from '../containers/LabelGroupContainer';
+import LabelAdderDropDownContainer from '../containers/LabelAdderDropDownContainer'
+
 
 class ToDoItem extends Component {
     toggleStatus = () => {
@@ -20,13 +21,14 @@ class ToDoItem extends Component {
     render() {
 
         const { text, done } = this.props.toDoItem;
+
         return (
             <div>
                 <div className="ItemLabel">
                     <input style={{
                         textDecoration: done ? 'line-through' : 'none'
                     }} type="button" className="todoItem" value={text} onClick={this.toggleStatus} />
-                    <AddLabelButtonContainer item={this.props.toDoItem} />
+                    <LabelAdderDropDownContainer toDoItem={this.props.toDoItem}/>
                     <DeleButton onClick={this.deleteItem} />
                 </div>
 

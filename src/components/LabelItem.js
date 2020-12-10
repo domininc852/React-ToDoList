@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-import { Modal, Button } from 'antd';
-import { addLabel } from '../apis/labels'
-
-class AddLabel extends Component {
+import { Button, Modal } from 'antd';
+import { deleteLabel, updateLabel } from '../apis/labels';
+class LabelItem extends Component {
     constructor(props) {
         super(props);
         this.state = { isModalVisible: false, text: "", color: null }
     }
-
+    deleteLabel = (event) => {
+        event.stopPropagation();
+        const id = this.props.label.id;
+        deleteLabel(id).then(() => {
+            this.props.deleteLabel(id)
+        })
+    }
     showModal = () => {
         this.setState({ isModalVisible: true });
     };
@@ -17,9 +22,9 @@ class AddLabel extends Component {
         if (text === "") {
             return;
         }
-        const label = { description: text, color: color };
-        addLabel(label).then((response) => {
-            this.props.addLabel(response.data);
+        const label = { ...this.props.label, description: text, color: color };
+        updateLabel(label).then((response) => {
+            this.props.updateLabel(response.data);
         })
         this.setState({ isModalVisible: false, text: "" });
     };
@@ -34,27 +39,29 @@ class AddLabel extends Component {
         this.setState({ color: event.target.value });
     }
     render() {
+        const { description, color } = this.props.label;
         return (
-            <div className="AddLabelButton">
-                <Button type="primary" onClick={this.showModal}>
-                    Add label
-            </Button>
+            <div className="LabelItem" style={{ background: color }}>
+                <span className="LabelDescription" onClick={this.showModal}>{description}</span>
+                <div className="LabelDeleteButton">
+                    <Button onClick={this.deleteLabel}>X</Button>
+                </div>
                 <Modal
-                    title="New Label"
+                    title="Modify Label"
                     visible={this.state.isModalVisible}
                     onOk={this.handleOk}
                     onCancel={this.handleCancel}
                 >
                     <label>Description: </label>
-                    <input type="text" placeholder="Description" value={this.state.text} onChange={this.changeText} />
+                    <input type="text" placeholder={description} value={this.state.text} onChange={this.changeText} />
                     <br />
                     <br />
                     <label>Color: </label>
-                    <input type="color" onChange={this.chanegColor} />
+                    <input type="color" value={color} onChange={this.chanegColor} />
                 </Modal>
             </div>
         );
     }
 }
 
-export default AddLabel;
+export default LabelItem;

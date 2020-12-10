@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ToDoItemContainer from '../containers/ToDoItemContainer'
 import { getAllTodoList } from '../apis/todos'
+import {getAllLabels} from '../apis/labels'
 import { List, Divider } from 'antd';
 
 class ToDoGroup extends Component {
@@ -8,7 +9,11 @@ class ToDoGroup extends Component {
     componentDidMount() {
         getAllTodoList().then((response) => {
             this.props.initTodo(response.data);
+        });
+        getAllLabels().then((response) => {
+            this.props.initLabel(response.data);
         })
+        
     }
 
     render() {

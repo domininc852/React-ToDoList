@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import DoneListContainer from './containers/DoneListContainer'
 import NotFound from './components/NotFound'
 import Navigation from './components/Navigation'
+import LabelManagementContainer from './containers/LabelManagementContainer';
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
         <Navigation />
         <Switch>
           <Route exact path="/done" component={DoneListContainer}></Route>
+          <Route exact path="/labels" component={LabelManagementContainer}></Route>
           <Route exact path="/" component={ToDoList}></Route>
+          
           <Route component={NotFound}></Route>
         </Switch>
       </BrowserRouter>
