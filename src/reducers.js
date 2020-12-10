@@ -8,7 +8,7 @@ const ToDos = (state = [], action) => {
     }
 
     if (action.type === ADD_TODO_ITEM) {
-        return [action.payload, ...state];
+        return [...state,action.payload ];
     }
     if (action.type === UPDATE_ITEM) {
         return state.map(todo => todo.id === action.payload.id ? { ...action.payload } : todo);
